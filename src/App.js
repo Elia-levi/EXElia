@@ -1,10 +1,10 @@
-//import logo from './logo.svg';
 import './App.css';
+import ExchangeApp from './exchange_comps/exchangeApp';
 
 function App() {
   return (
     <div className="App">
-      <h1>react start</h1>
+      <ExchangeApp/>
     </div>
   );
 }

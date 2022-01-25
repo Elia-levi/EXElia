@@ -9,6 +9,15 @@ function ScoreEx(props) {
     let [current, setcurrent] = useState(new Date());
     const date = `Date: ${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}  Time: ${current.toLocaleTimeString()}`;
 
+
+    useEffect(() => {
+        makeDate();
+    }, [current])
+
+    const makeDate = () => {
+        setcurrent(new Date())
+    }
+
     let { ar, amount, to, from } = useContext(ExchangeContext);
 
     return (

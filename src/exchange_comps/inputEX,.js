@@ -21,38 +21,35 @@ function InputEX(props) {
     const changVal = () => {
         setTO(fromref.current.value);
         setFrom(toref.current.value);
-        let temp=fromref
-        fromref=toref;
-        toref=temp;
+        let temp = fromref.current.value
+        fromref.current.value = toref.current.value;
+        toref.current.value = temp;
 
     }
 
     return (
-        <div className='container'>
-            <h1 className='text-center display-4 my-4'>Exchnge</h1>
+        
             <div className='justify-content-center  d-flex align-items-center '>
-                <div className='me-3 col-lg-3 me-2'>
+                <div className='me-2 col-lg-3 '>
                     <label className='m-0 h4 '>Amount</label>
                     <input ref={amountref} onChange={changAmount} type="number" defaultValue="1" className='form-control ' />
                 </div>
-                <div className='me-3 col-lg-2'>
+                <div className='mx-4 col-lg-3'>
                     <label className='h4 m-0' >From</label>
-                    <select ref={fromref} className='form-select' onChange={changFrom}>
-                        <option >Choose a coins</option>
-                        <option value='ILS'>ILS-Shekel</option>
+                    <select ref={fromref} defaultValue={'EUR'} className='form-select' onChange={changFrom}>
                         <option value='EUR'>Eur-euro</option>
+                        <option value='ILS'>ILS-Shekel</option>
                         <option value='GBP'>GBP-British pound</option>
                         <option value='JPY'>JPY-Japanese Yen</option>
                         <option value='CNY'>CNY-Chinese Yuan</option>
                         <option value='GBP'>GBP-British pound</option>
                     </select>
                 </div>
-                <button onClick={changVal} className=' badge btn-info m-0 '><i className="fa fa-arrows-h" aria-hidden="true"></i>
+                <button onClick={changVal} className=' badge btn-info m-0  '><i className="fa fa-arrows-h" aria-hidden="true"></i>
                 </button>
-                <div className='ms-3 col-lg-2'>
+                <div className='mx-4 col-lg-3'>
                     <label className='h4 m-0'>To</label>
-                    <select ref={toref} className='form-select' onChange={changTo}>
-                        <option >Choose a coins</option>
+                    <select ref={toref} defaultValue={'ILS'} className='form-select' onChange={changTo}>
                         <option value='ILS'>ILS-Shekel</option>
                         <option value='EUR'>Eur-euro</option>
                         <option value='GBP'>GBP-British pound</option>
@@ -63,7 +60,7 @@ function InputEX(props) {
                 </div>
 
             </div>
-        </div>
+        
 
     )
 }

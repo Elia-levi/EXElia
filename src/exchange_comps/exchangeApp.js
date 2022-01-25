@@ -14,8 +14,6 @@ function ExchangeApp(props) {
         doApi();
     }, [])
 
-
-
     const doApi = async () => {
         let url = `https://freecurrencyapi.net/api/v2/latest?apikey=f2dce500-45f0-11ec-9860-7954a32a920b`
         let resp = await axios.get(url);
